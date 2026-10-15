@@ -1,0 +1,8 @@
+=== RUN   TestCompose
+    compose_test.go:183: 20/20 results; service DNS; health before client; no published ports; non-root/readonly/capabilities/resources: PASS
+    compose_test.go:201: external rule change after restart with same image: PASS
+    compose_test.go:206: SIGTERM graceful shutdown: PASS
+    compose_test.go:225: invalid rules reject startup and prevent client execution: PASS
+--- PASS: TestCompose (21.50s)
+PASS
+ok  	banner-fingerprint/integration	21.947s

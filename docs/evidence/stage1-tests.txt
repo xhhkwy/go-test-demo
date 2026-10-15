@@ -1,0 +1,14 @@
+?   	banner-fingerprint/cmd/client	[no test files]
+?   	banner-fingerprint/cmd/server	[no test files]
+=== RUN   TestDefaults
+--- PASS: TestDefaults (0.00s)
+=== RUN   TestHelp
+--- PASS: TestHelp (0.00s)
+=== RUN   TestInvalidConfiguration
+--- PASS: TestInvalidConfiguration (0.00s)
+PASS
+ok  	banner-fingerprint/internal/config	0.253s
+=== RUN   TestUnknownContract
+--- PASS: TestUnknownContract (0.00s)
+PASS
+ok  	banner-fingerprint/internal/model	0.290s

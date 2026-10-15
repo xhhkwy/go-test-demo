@@ -1,0 +1,3 @@
+NAME                              IMAGE                             COMMAND                  SERVICE   CREATED         STATUS                    PORTS
+fp-oneclick-1792057068-client-1   banner-fingerprint-client:local   "/client --input /da…"   client    7 seconds ago   Exited (0) 1 second ago   
+fp-oneclick-1792057068-server-1   banner-fingerprint-server:local   "/server --addr :808…"   server    8 seconds ago   Up 7 seconds (healthy)    

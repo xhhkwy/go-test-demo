@@ -1,0 +1,12 @@
+*
+!go.mod
+!cmd/
+!cmd/**
+!internal/
+!internal/**
+!integration/
+!integration/**
+!rules/
+!rules/fingerprints.json
+!testdata/
+!testdata/*.json

@@ -1,0 +1,152 @@
+{
+  "name": "banner-fingerprint",
+  "networks": {
+    "backend": {
+      "name": "banner-fingerprint_backend",
+      "ipam": {},
+      "internal": true
+    }
+  },
+  "services": {
+    "client": {
+      "build": {
+        "context": "E:\\Go-project\\banner-fingerprint",
+        "dockerfile": "Dockerfile",
+        "args": {
+          "GO_IMAGE": "golang:1.27.2-bookworm"
+        },
+        "target": "client"
+      },
+      "cap_drop": [
+        "ALL"
+      ],
+      "cpus": 1,
+      "command": [
+        "--input",
+        "/data/scans.json",
+        "--server",
+        "http://server:8080",
+        "--format",
+        "table"
+      ],
+      "depends_on": {
+        "server": {
+          "condition": "service_healthy",
+          "required": true
+        }
+      },
+      "entrypoint": null,
+      "image": "banner-fingerprint-client:local",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-file": "3",
+          "max-size": "10m"
+        }
+      },
+      "mem_limit": "134217728",
+      "networks": {
+        "backend": null
+      },
+      "pids_limit": 64,
+      "read_only": true,
+      "restart": "no",
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "user": "65532:65532",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "E:\\Go-project\\banner-fingerprint\\testdata\\scans.json",
+          "target": "/data/scans.json",
+          "read_only": true,
+          "bind": {}
+        }
+      ]
+    },
+    "server": {
+      "build": {
+        "context": "E:\\Go-project\\banner-fingerprint",
+        "dockerfile": "Dockerfile",
+        "args": {
+          "GO_IMAGE": "golang:1.27.2-bookworm"
+        },
+        "target": "server"
+      },
+      "cap_drop": [
+        "ALL"
+      ],
+      "cpus": 1,
+      "command": [
+        "--addr",
+        ":8080",
+        "--rules",
+        "/rules/fingerprints.json"
+      ],
+      "entrypoint": null,
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "/server",
+          "healthcheck"
+        ],
+        "timeout": "3s",
+        "interval": "5s",
+        "retries": 5,
+        "start_period": "5s"
+      },
+      "image": "banner-fingerprint-server:local",
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-file": "3",
+          "max-size": "10m"
+        }
+      },
+      "mem_limit": "536870912",
+      "networks": {
+        "backend": null
+      },
+      "pids_limit": 64,
+      "read_only": true,
+      "restart": "unless-stopped",
+      "security_opt": [
+        "no-new-privileges:true"
+      ],
+      "stop_grace_period": "15s",
+      "user": "65532:65532",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "E:\\Go-project\\banner-fingerprint\\rules",
+          "target": "/rules",
+          "read_only": true,
+          "bind": {}
+        }
+      ]
+    }
+  },
+  "x-runtime": {
+    "cap_drop": [
+      "ALL"
+    ],
+    "cpus": 1,
+    "logging": {
+      "driver": "json-file",
+      "options": {
+        "max-file": "3",
+        "max-size": "10m"
+      }
+    },
+    "networks": [
+      "backend"
+    ],
+    "pids_limit": 64,
+    "read_only": true,
+    "security_opt": [
+      "no-new-privileges:true"
+    ],
+    "user": "65532:65532"
+  }
+}

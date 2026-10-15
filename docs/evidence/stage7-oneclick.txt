@@ -1,0 +1,113 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.36kB 0.0s done
+#1 DONE 0.0s
+
+#2 [server internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.23kB done
+#2 DONE 0.0s
+
+#3 [server internal] load metadata for docker.io/library/golang:1.27.2-bookworm@sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61
+#3 DONE 0.0s
+
+#4 [client internal] load .dockerignore
+#4 transferring context: 181B done
+#4 DONE 0.0s
+
+#4 [server internal] load .dockerignore
+#4 DONE 0.0s
+
+#5 [client source 1/8] FROM docker.io/library/golang:1.27.2-bookworm@sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61
+#5 resolve docker.io/library/golang:1.27.2-bookworm@sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61 0.0s done
+#5 DONE 0.0s
+
+#6 [server internal] load build context
+#6 transferring context: 1.91kB done
+#6 DONE 0.0s
+
+#7 [client build 1/1] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o /out/server ./cmd/server  && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o /out/client ./cmd/client
+#7 CACHED
+
+#8 [client source 2/8] WORKDIR /src
+#8 CACHED
+
+#9 [client source 4/8] COPY cmd ./cmd
+#9 CACHED
+
+#10 [client source 3/8] COPY go.mod ./
+#10 CACHED
+
+#11 [client test 1/1] RUN CGO_ENABLED=1 go test -count=1 -race -timeout 180s ./... && go vet ./...
+#11 CACHED
+
+#12 [client source 5/8] COPY internal ./internal
+#12 CACHED
+
+#13 [client source 6/8] COPY integration ./integration
+#13 CACHED
+
+#14 [client source 8/8] COPY testdata ./testdata
+#14 CACHED
+
+#15 [server server 1/2] COPY --from=build /out/server /server
+#15 CACHED
+
+#16 [client source 7/8] COPY rules ./rules
+#16 CACHED
+
+#17 [client client 1/1] COPY --from=build /out/client /client
+#17 CACHED
+
+#18 [server server 2/2] COPY --from=build /src/rules/fingerprints.json /rules/fingerprints.json
+#18 CACHED
+
+#19 [server] exporting to image
+#19 exporting layers
+#19 exporting layers done
+#19 exporting manifest sha256:174543e7c91b36acb2953fe3f2f451ace37073bb842a9e902860d0f2b9d85bce 0.1s done
+#19 exporting config sha256:945e856bb9b850514d62029673806338ed36b7c2dd0868837b7e2d616f20150d 0.1s done
+#19 exporting attestation manifest sha256:aa9221ebb3ffea085575cbc1bc75788ea70c2e46f458b30e147fdb386160b501 0.1s done
+#19 exporting manifest list sha256:6d57e5398877e65f7c2d3e67e9d452a850839565fc1dd79014fd299c39682db0
+#19 exporting manifest list sha256:6d57e5398877e65f7c2d3e67e9d452a850839565fc1dd79014fd299c39682db0 0.1s done
+#19 naming to docker.io/library/banner-fingerprint-server:local 0.0s done
+#19 unpacking to docker.io/library/banner-fingerprint-server:local done
+#19 DONE 0.4s
+
+#20 [client] exporting to image
+#20 exporting layers done
+#20 exporting manifest sha256:6d25f660a547258ce3cda79416c5ff260cb07e5e337029f8b3b24576bc1fae5a 0.1s done
+#20 exporting config sha256:66b4d97494c346b97ed68f21caf398f5f5f8aba05b61714a0ee5567a47bae797 0.1s done
+#20 exporting attestation manifest sha256:7b34e99863d781ffa1f1f87ea3da23620aaa61c31a88538b6019be03bfd7d93d 0.1s done
+#20 exporting manifest list sha256:27f6a8321b250d5f85e792fa1dca6368ba66e43e088fa31573b9ac12ee809ece 0.0s done
+#20 naming to docker.io/library/banner-fingerprint-client:local 0.0s done
+#20 unpacking to docker.io/library/banner-fingerprint-client:local 0.0s done
+#20 DONE 0.4s
+
+#21 [server] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [client] resolving provenance for metadata file
+#22 DONE 0.0s
+ banner-fingerprint-server:local  Built
+ banner-fingerprint-client:local  Built
+ Network fp-oneclick-1792057068_backend  Creating
+ Network fp-oneclick-1792057068_backend  Created
+ Container fp-oneclick-1792057068-server-1  Creating
+ Container fp-oneclick-1792057068-server-1  Created
+ Container fp-oneclick-1792057068-client-1  Creating
+ Container fp-oneclick-1792057068-client-1  Created
+ Container fp-oneclick-1792057068-server-1  Starting
+ Container fp-oneclick-1792057068-server-1  Started
+ Container fp-oneclick-1792057068-server-1  Waiting
+ Container fp-oneclick-1792057068-server-1  Healthy
+ Container fp-oneclick-1792057068-client-1  Starting
+ Container fp-oneclick-1792057068-client-1  Started
+ Container fp-oneclick-1792057068-client-1  Stopping
+ Container fp-oneclick-1792057068-client-1  Stopped
+ Container fp-oneclick-1792057068-client-1  Removing
+ Container fp-oneclick-1792057068-client-1  Removed
+ Container fp-oneclick-1792057068-server-1  Stopping
+ Container fp-oneclick-1792057068-server-1  Stopped
+ Container fp-oneclick-1792057068-server-1  Removing
+ Container fp-oneclick-1792057068-server-1  Removed
+ Network fp-oneclick-1792057068_backend  Removing
+ Network fp-oneclick-1792057068_backend  Removed

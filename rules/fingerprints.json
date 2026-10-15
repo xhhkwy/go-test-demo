@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {"id":"ssh-openssh","source":"ssh","pattern":"^SSH-(?:2\\.0|1\\.99|1\\.5)-OpenSSH_([0-9][0-9A-Za-z.p+-]*)(?:[ \\t].*)?$","protocol":"SSH","product":"OpenSSH","version_group":1,"priority":100,"confidence":0.95},
+    {"id":"http-nginx","source":"http_server","pattern":"(?i)^nginx(?:/([0-9][0-9A-Za-z._+-]*))?(?:[ \\t;(]|$)","protocol":"HTTP","product":"nginx","version_group":1,"priority":100,"confidence":0.9},
+    {"id":"http-apache","source":"http_server","pattern":"(?i)^Apache(?:/([0-9][0-9A-Za-z._+-]*))?(?:[ \\t;(]|$)","protocol":"HTTP","product":"Apache","version_group":1,"priority":100,"confidence":0.9},
+    {"id":"http-jetty","source":"http_server","pattern":"(?i)^Jetty(?:[/\\(]([0-9][0-9A-Za-z._+-]*)\\)?)?(?:[ \\t;(]|$)","protocol":"HTTP","product":"Jetty","version_group":1,"priority":100,"confidence":0.85},
+    {"id":"mysql-handshake","source":"mysql_version","pattern":"^([0-9]+\\.[0-9]+\\.[0-9]+[A-Za-z0-9._+~-]*)$","protocol":"MySQL","product":"MySQL","version_group":1,"priority":100,"confidence":0.9},
+    {"id":"redis-pong","source":"banner","pattern":"^\\+PONG(?:\\r?\\n)?$","protocol":"Redis","product":"Redis","version_group":0,"priority":100,"confidence":0.7},
+    {"id":"redis-arguments","source":"banner","pattern":"^-ERR wrong number of arguments for '[^'\\r\\n]+' command(?:\\r?\\n)?$","protocol":"Redis","product":"Redis","version_group":0,"priority":100,"confidence":0.7},
+    {"id":"redis-noauth","source":"banner","pattern":"^-NOAUTH Authentication required\\.(?:\\r?\\n)?$","protocol":"Redis","product":"Redis","version_group":0,"priority":100,"confidence":0.7},
+    {"id":"ftp-proftpd","source":"ftp","pattern":"(?i)^220[- ].*?\\bProFTPD(?:[ \\t]+([0-9][0-9A-Za-z._+-]*))?\\b","protocol":"FTP","product":"ProFTPD","version_group":1,"priority":100,"confidence":0.9},
+    {"id":"ssh-generic","source":"ssh","pattern":"^SSH-(?:2\\.0|1\\.99|1\\.5)-[^ \\t]+(?:[ \\t].*)?$","protocol":"SSH","product":"","version_group":0,"priority":0,"confidence":0.6},
+    {"id":"http-generic","source":"http_status","pattern":"^HTTP/","protocol":"HTTP","product":"","version_group":0,"priority":0,"confidence":0.6},
+    {"id":"ftp-generic","source":"ftp","pattern":"(?i)^220[- ].*FTP(?:d)?\\b","protocol":"FTP","product":"","version_group":0,"priority":0,"confidence":0.6}
+  ],
+  "os_hints": [
+    {"id":"ssh-ubuntu","source":"ssh","pattern":"(?i)\\bUbuntu\\b","hint":"Ubuntu"},
+    {"id":"ssh-debian","source":"ssh","pattern":"(?i)\\bDebian\\b","hint":"Debian"},
+    {"id":"http-ubuntu","source":"http_server","pattern":"(?i)\\bUbuntu\\b","hint":"Ubuntu"},
+    {"id":"http-debian","source":"http_server","pattern":"(?i)\\bDebian\\b","hint":"Debian"}
+  ]
+}

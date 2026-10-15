@@ -1,0 +1,84 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 419B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/node:24-alpine
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/node:24-alpine@sha256:f36fed0b2129a8492535e2853c64fbdbd2d29dc1219ee3217023ca48aebd3787
+#5 resolve docker.io/library/node:24-alpine@sha256:f36fed0b2129a8492535e2853c64fbdbd2d29dc1219ee3217023ca48aebd3787 0.0s done
+#5 DONE 0.1s
+
+#5 [1/5] FROM docker.io/library/node:24-alpine@sha256:f36fed0b2129a8492535e2853c64fbdbd2d29dc1219ee3217023ca48aebd3787
+#5 DONE 0.3s
+
+#4 [internal] load build context
+#4 transferring context: 70.60MB 4.3s done
+#4 DONE 4.4s
+
+#6 [2/5] RUN apk add --no-cache build-base ca-certificates
+#6 0.376 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz
+#6 4.485 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz
+#6 9.713 (1/21) Upgrading musl (1.2.5-r10 -> 1.2.5-r12)
+#6 10.70 (2/21) Installing jansson (2.14.1-r0)
+#6 10.94 (3/21) Installing zstd-libs (1.5.7-r0)
+#6 11.87 (4/21) Installing binutils (2.44-r3)
+#6 18.46 (5/21) Installing libmagic (5.46-r2)
+#6 19.91 (6/21) Installing file (5.46-r2)
+#6 20.59 (7/21) Installing libgomp (14.2.0-r6)
+#6 20.87 (8/21) Installing libatomic (14.2.0-r6)
+#6 20.93 (9/21) Installing gmp (6.3.0-r3)
+#6 21.55 (10/21) Installing isl26 (0.26-r1)
+#6 23.60 (11/21) Installing mpfr4 (4.2.1_p1-r0)
+#6 24.42 (12/21) Installing mpc1 (1.3.1-r1)
+#6 24.62 (13/21) Installing gcc (14.2.0-r6)
+#6 108.7 (14/21) Installing libstdc++-dev (14.2.0-r6)
+#6 115.2 (15/21) Installing musl-dev (1.2.5-r12)
+#6 120.6 (16/21) Installing g++ (14.2.0-r6)
+#6 137.3 (17/21) Installing make (4.4.1-r3)
+#6 137.5 (18/21) Installing fortify-headers (1.1-r5)
+#6 137.5 (19/21) Installing patch (2.8-r0)
+#6 137.6 (20/21) Installing build-base (0.5-r3)
+#6 137.6 (21/21) Installing ca-certificates (20260909-r0)
+#6 137.8 Executing busybox-1.37.0-r19.trigger
+#6 137.8 Executing ca-certificates-20260909-r0.trigger
+#6 137.8 OK: 245 MiB in 38 packages
+#6 DONE 138.0s
+
+#7 [3/5] COPY go1.27.2.linux-amd64.tar.gz /tmp/go.tar.gz
+#7 DONE 0.2s
+
+#8 [4/5] RUN echo "ecbadb99091a3f46e31f5f934b068b1864eafa7995211b39eaddf76996045fe5  /tmp/go.tar.gz" | sha256sum -c -  && tar -C /usr/local -xzf /tmp/go.tar.gz  && rm /tmp/go.tar.gz
+#8 0.533 /tmp/go.tar.gz: OK
+#8 DONE 3.0s
+
+#9 [5/5] RUN go version && gcc --version
+#9 0.332 go version go1.27.2 linux/amd64
+#9 0.333 gcc (Alpine 14.2.0) 14.2.0
+#9 0.333 Copyright (C) 2024 Free Software Foundation, Inc.
+#9 0.333 This is free software; see the source for copying conditions.  There is NO
+#9 0.333 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#9 0.333 
+#9 DONE 0.4s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 8.9s done
+#10 exporting manifest sha256:1926dd2c366c46d5799f449d58c550e5cbc7aa9a918e29a6f6556c71911c3f27 0.0s done
+#10 exporting config sha256:b1ee225c40c2c08934b37d9d29b10e13b7da03544bd3a9772a96b3ce87ed9398 0.0s done
+#10 exporting attestation manifest sha256:8a85a0ac8d0bdc110c8454a7a6f8f6e8ec4ec2f86c09c72866ae8d01608cfe40 0.1s done
+#10 exporting manifest list sha256:6be7cbc07de35eca89e55427bd4910911b06664b192e6527691cb8ce59a51347
+#10 exporting manifest list sha256:6be7cbc07de35eca89e55427bd4910911b06664b192e6527691cb8ce59a51347 0.0s done
+#10 naming to docker.io/library/banner-fingerprint-builder:go1.27.2 done
+#10 unpacking to docker.io/library/banner-fingerprint-builder:go1.27.2
+#10 unpacking to docker.io/library/banner-fingerprint-builder:go1.27.2 4.0s done
+#10 DONE 13.2s

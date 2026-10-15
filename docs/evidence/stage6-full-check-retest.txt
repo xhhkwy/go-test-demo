@@ -1,0 +1,130 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.35kB 0.0s done
+#1 DONE 0.0s
+
+#2 [server internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.23kB done
+#2 DONE 0.0s
+
+#3 [client internal] load metadata for docker.io/library/golang:1.27.2-bookworm@sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61
+#3 DONE 0.0s
+
+#4 [server internal] load .dockerignore
+#4 transferring context: 181B done
+#4 DONE 0.0s
+
+#4 [client internal] load .dockerignore
+#4 DONE 0.0s
+
+#5 [server source 1/8] FROM docker.io/library/golang:1.27.2-bookworm@sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61
+#5 resolve docker.io/library/golang:1.27.2-bookworm@sha256:5cf287a799e6b94384bad13d16b14904c531f51ba65792237e122ce42b392f61 0.0s done
+#5 DONE 0.0s
+
+#6 [client internal] load build context
+#6 transferring context: 12.28kB done
+#6 DONE 0.0s
+
+#7 [server source 2/8] WORKDIR /src
+#7 CACHED
+
+#8 [server source 3/8] COPY go.mod ./
+#8 CACHED
+
+#9 [client source 4/8] COPY cmd ./cmd
+#9 CACHED
+
+#10 [server source 5/8] COPY internal ./internal
+#10 DONE 0.1s
+
+#10 [client source 5/8] COPY internal ./internal
+#10 DONE 0.1s
+
+#11 [server source 6/8] COPY integration ./integration
+#11 DONE 0.1s
+
+#11 [client source 6/8] COPY integration ./integration
+#11 DONE 0.1s
+
+#12 [server source 7/8] COPY rules ./rules
+#12 DONE 0.1s
+
+#13 [client source 8/8] COPY testdata ./testdata
+#13 DONE 0.1s
+
+#14 [client test 1/1] RUN CGO_ENABLED=1 go test -count=1 -race -timeout 180s ./... && go vet ./...
+#14 11.52 ?   	banner-fingerprint/cmd/client	[no test files]
+#14 11.55 ?   	banner-fingerprint/cmd/server	[no test files]
+#14 18.86 ok  	banner-fingerprint/integration	6.988s
+#14 18.86 ?   	banner-fingerprint/internal/app	[no test files]
+#14 18.86 ok  	banner-fingerprint/internal/client	1.216s
+#14 18.86 ok  	banner-fingerprint/internal/config	1.025s
+#14 18.86 ok  	banner-fingerprint/internal/fingerprint	1.060s
+#14 18.86 ok  	banner-fingerprint/internal/health	1.056s
+#14 18.86 ok  	banner-fingerprint/internal/httpapi	1.101s
+#14 18.86 ok  	banner-fingerprint/internal/input	1.041s
+#14 18.86 ok  	banner-fingerprint/internal/model	1.039s
+#14 DONE 20.3s
+
+#14 [client test 1/1] RUN CGO_ENABLED=1 go test -count=1 -race -timeout 180s ./... && go vet ./...
+#14 DONE 20.3s
+
+#15 [server build 1/1] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o /out/server ./cmd/server  && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o /out/client ./cmd/client
+#15 DONE 6.0s
+
+#15 [client build 1/1] RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o /out/server ./cmd/server  && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o /out/client ./cmd/client
+#15 DONE 6.0s
+
+#16 [server server 1/2] COPY --from=build /out/server /server
+#16 DONE 0.1s
+
+#17 [client client 1/1] COPY --from=build /out/client /client
+#17 DONE 0.1s
+
+#18 [client] exporting to image
+#18 exporting layers
+#18 ...
+
+#19 [server server 2/2] COPY --from=build /src/rules/fingerprints.json /rules/fingerprints.json
+#19 DONE 0.2s
+
+#20 [server] exporting to image
+#20 exporting layers 0.5s done
+#20 exporting manifest sha256:4515921a8ee6df941d3b5b2a688daa30d4cda2b4bdbfff3494bcc1e360e18bec 0.0s done
+#20 exporting config sha256:8fb919bb4e1214d7ae2951fb306031a064e6ff836546517aa215e7ab54d9d550 0.0s done
+#20 ...
+
+#18 [client] exporting to image
+#18 exporting layers 0.5s done
+#18 exporting manifest sha256:459c5e512070a9a862ce4b64208f7531649c39d99ccaf591925bf45185f50c8e 0.0s done
+#18 exporting config sha256:3f486d1466bc4c0553ffabe5656f96042153011779d711de69f1f54a674fd973 0.0s done
+#18 exporting attestation manifest sha256:b653b8e626d282f41fedeb9ca80e032dd6a29afacb43dc662e2fb89486ef9e9c 0.1s done
+#18 exporting manifest list sha256:0c8442070d10512860abb9cda77946b290e5b2521ada19d550d7a505379e55dc 0.1s done
+#18 naming to docker.io/library/banner-fingerprint-client:local 0.0s done
+#18 unpacking to docker.io/library/banner-fingerprint-client:local 0.1s done
+#18 DONE 0.8s
+
+#20 [server] exporting to image
+#20 exporting attestation manifest sha256:a98f5ad087a38f2ff29417e241360717c23cc7e5ca9273bea0559519d4027b62 0.1s done
+#20 exporting manifest list sha256:8630e5c4c5e3e031cc7fa4a83b7fd44fdabcbaf7df23a8bf5ced779f5aa24eff
+#20 exporting manifest list sha256:8630e5c4c5e3e031cc7fa4a83b7fd44fdabcbaf7df23a8bf5ced779f5aa24eff 0.1s done
+#20 naming to docker.io/library/banner-fingerprint-server:local 0.0s done
+#20 unpacking to docker.io/library/banner-fingerprint-server:local
+#20 unpacking to docker.io/library/banner-fingerprint-server:local 0.1s done
+#20 DONE 0.9s
+
+#21 [client] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [server] resolving provenance for metadata file
+#22 DONE 0.0s
+ banner-fingerprint-client:local  Built
+ banner-fingerprint-server:local  Built
+=== RUN   TestCompose
+    compose_test.go:193: 20/20 results; service DNS; health before client; no published ports; non-root/readonly/capabilities/resources: PASS
+    compose_test.go:219: debug override: real loopback HTTP access, binds 127.0.0.1 only: PASS
+    compose_test.go:237: external rule change after restart with same image: PASS
+    compose_test.go:242: SIGTERM graceful shutdown: PASS
+    compose_test.go:262: invalid rules reject startup and prevent client execution: PASS
+--- PASS: TestCompose (28.28s)
+PASS
+ok  	banner-fingerprint/integration	28.728s

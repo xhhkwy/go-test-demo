@@ -1,0 +1,15 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/5 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 5/5 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 181380 (60403/sec), new interesting: 72 (total: 77)
+fuzz: elapsed: 6s, execs: 379464 (66009/sec), new interesting: 83 (total: 88)
+fuzz: elapsed: 9s, execs: 554107 (58095/sec), new interesting: 94 (total: 99)
+fuzz: elapsed: 12s, execs: 714227 (53390/sec), new interesting: 106 (total: 111)
+fuzz: elapsed: 15s, execs: 890181 (58714/sec), new interesting: 110 (total: 115)
+fuzz: elapsed: 18s, execs: 1015686 (41708/sec), new interesting: 116 (total: 121)
+fuzz: elapsed: 21s, execs: 1085383 (23305/sec), new interesting: 118 (total: 123)
+fuzz: elapsed: 24s, execs: 1181681 (32118/sec), new interesting: 124 (total: 129)
+fuzz: elapsed: 27s, execs: 1343625 (53955/sec), new interesting: 126 (total: 131)
+fuzz: elapsed: 30s, execs: 1462592 (39574/sec), new interesting: 133 (total: 138)
+fuzz: elapsed: 31s, execs: 1462592 (0/sec), new interesting: 133 (total: 138)
+PASS
+ok  	banner-fingerprint/internal/fingerprint	31.365s

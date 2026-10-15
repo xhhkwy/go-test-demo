@@ -1,0 +1,48 @@
+?   	banner-fingerprint/cmd/client	[no test files]
+?   	banner-fingerprint/cmd/server	[no test files]
+=== RUN   TestOneHundredRoundTrips
+--- PASS: TestOneHundredRoundTrips (0.01s)
+=== RUN   TestConnectionFailure
+--- PASS: TestConnectionFailure (0.00s)
+=== RUN   TestTimeoutAndCancellation
+--- PASS: TestTimeoutAndCancellation (0.06s)
+=== RUN   TestFailedAndInvalidResponses
+=== RUN   TestFailedAndInvalidResponses/HTTP_failure
+=== RUN   TestFailedAndInvalidResponses/redirect
+=== RUN   TestFailedAndInvalidResponses/bad_JSON
+=== RUN   TestFailedAndInvalidResponses/null
+=== RUN   TestFailedAndInvalidResponses/count
+=== RUN   TestFailedAndInvalidResponses/order
+=== RUN   TestFailedAndInvalidResponses/range
+=== RUN   TestFailedAndInvalidResponses/trailing
+--- PASS: TestFailedAndInvalidResponses (0.01s)
+    --- PASS: TestFailedAndInvalidResponses/HTTP_failure (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/redirect (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/bad_JSON (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/null (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/count (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/order (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/range (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/trailing (0.00s)
+PASS
+ok  	banner-fingerprint/internal/client	0.578s
+=== RUN   TestDefaults
+--- PASS: TestDefaults (0.00s)
+=== RUN   TestHelp
+--- PASS: TestHelp (0.00s)
+=== RUN   TestInvalidConfiguration
+--- PASS: TestInvalidConfiguration (0.00s)
+PASS
+ok  	banner-fingerprint/internal/config	0.259s
+=== RUN   TestPanicRecoveryAndRequestID
+--- PASS: TestPanicRecoveryAndRequestID (0.02s)
+=== RUN   TestConcurrencyLimitHealthBypass
+--- PASS: TestConcurrencyLimitHealthBypass (0.00s)
+=== RUN   TestBodyLimit
+--- PASS: TestBodyLimit (0.00s)
+PASS
+ok  	banner-fingerprint/internal/httpapi	0.348s
+=== RUN   TestUnknownContract
+--- PASS: TestUnknownContract (0.00s)
+PASS
+ok  	banner-fingerprint/internal/model	0.276s

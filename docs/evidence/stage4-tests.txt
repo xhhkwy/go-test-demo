@@ -1,0 +1,179 @@
+?   	banner-fingerprint/cmd/client	[no test files]
+?   	banner-fingerprint/cmd/server	[no test files]
+?   	banner-fingerprint/internal/app	[no test files]
+=== RUN   TestOneHundredRoundTrips
+--- PASS: TestOneHundredRoundTrips (0.01s)
+=== RUN   TestConnectionFailure
+--- PASS: TestConnectionFailure (0.00s)
+=== RUN   TestTimeoutAndCancellation
+--- PASS: TestTimeoutAndCancellation (0.06s)
+=== RUN   TestFailedAndInvalidResponses
+=== RUN   TestFailedAndInvalidResponses/HTTP_failure
+=== RUN   TestFailedAndInvalidResponses/redirect
+=== RUN   TestFailedAndInvalidResponses/bad_JSON
+=== RUN   TestFailedAndInvalidResponses/null
+=== RUN   TestFailedAndInvalidResponses/count
+=== RUN   TestFailedAndInvalidResponses/order
+=== RUN   TestFailedAndInvalidResponses/range
+=== RUN   TestFailedAndInvalidResponses/trailing
+--- PASS: TestFailedAndInvalidResponses (0.01s)
+    --- PASS: TestFailedAndInvalidResponses/HTTP_failure (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/redirect (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/bad_JSON (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/null (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/count (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/order (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/range (0.00s)
+    --- PASS: TestFailedAndInvalidResponses/trailing (0.00s)
+PASS
+ok  	banner-fingerprint/internal/client	(cached)
+=== RUN   TestDefaults
+--- PASS: TestDefaults (0.00s)
+=== RUN   TestHelp
+--- PASS: TestHelp (0.00s)
+=== RUN   TestInvalidConfiguration
+--- PASS: TestInvalidConfiguration (0.00s)
+PASS
+ok  	banner-fingerprint/internal/config	(cached)
+=== RUN   TestSampleGolden
+=== RUN   TestSampleGolden/1.2.3.4
+=== RUN   TestSampleGolden/1.2.3.5
+=== RUN   TestSampleGolden/1.2.3.6
+=== RUN   TestSampleGolden/1.2.3.7
+=== RUN   TestSampleGolden/1.2.3.8
+=== RUN   TestSampleGolden/1.2.3.9
+=== RUN   TestSampleGolden/1.2.3.10
+=== RUN   TestSampleGolden/1.2.3.11
+=== RUN   TestSampleGolden/1.2.3.12
+=== RUN   TestSampleGolden/1.2.3.13
+=== RUN   TestSampleGolden/1.2.3.14
+=== RUN   TestSampleGolden/1.2.3.15
+=== RUN   TestSampleGolden/1.2.3.16
+=== RUN   TestSampleGolden/1.2.3.17
+=== RUN   TestSampleGolden/1.2.3.18
+=== RUN   TestSampleGolden/1.2.3.19
+=== RUN   TestSampleGolden/1.2.3.20
+=== RUN   TestSampleGolden/1.2.3.21
+=== RUN   TestSampleGolden/1.2.3.22
+=== RUN   TestSampleGolden/1.2.3.23
+--- PASS: TestSampleGolden (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.4 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.5 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.6 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.7 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.8 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.9 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.10 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.11 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.12 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.13 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.14 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.15 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.16 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.17 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.18 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.19 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.20 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.21 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.22 (0.00s)
+    --- PASS: TestSampleGolden/1.2.3.23 (0.00s)
+=== RUN   TestRecognitionEdges
+=== RUN   TestRecognitionEdges/empty
+=== RUN   TestRecognitionEdges/ssh_preamble
+=== RUN   TestRecognitionEdges/SSH_suffix
+=== RUN   TestRecognitionEdges/truncated_mysql
+=== RUN   TestRecognitionEdges/case-insensitive_header
+=== RUN   TestRecognitionEdges/bad_mysql_length
+=== RUN   TestRecognitionEdges/wrong_sequence
+=== RUN   TestRecognitionEdges/binary_garbage
+=== RUN   TestRecognitionEdges/port_is_not_evidence
+=== RUN   TestRecognitionEdges/SMTP
+=== RUN   TestRecognitionEdges/body_ignored
+=== RUN   TestRecognitionEdges/no_version
+=== RUN   TestRecognitionEdges/jetty_parentheses
+=== RUN   TestRecognitionEdges/missing_mysql_terminator
+--- PASS: TestRecognitionEdges (0.00s)
+    --- PASS: TestRecognitionEdges/empty (0.00s)
+    --- PASS: TestRecognitionEdges/ssh_preamble (0.00s)
+    --- PASS: TestRecognitionEdges/SSH_suffix (0.00s)
+    --- PASS: TestRecognitionEdges/truncated_mysql (0.00s)
+    --- PASS: TestRecognitionEdges/case-insensitive_header (0.00s)
+    --- PASS: TestRecognitionEdges/bad_mysql_length (0.00s)
+    --- PASS: TestRecognitionEdges/wrong_sequence (0.00s)
+    --- PASS: TestRecognitionEdges/binary_garbage (0.00s)
+    --- PASS: TestRecognitionEdges/port_is_not_evidence (0.00s)
+    --- PASS: TestRecognitionEdges/SMTP (0.00s)
+    --- PASS: TestRecognitionEdges/body_ignored (0.00s)
+    --- PASS: TestRecognitionEdges/no_version (0.00s)
+    --- PASS: TestRecognitionEdges/jetty_parentheses (0.00s)
+    --- PASS: TestRecognitionEdges/missing_mysql_terminator (0.00s)
+=== RUN   TestDecodeEncodings
+--- PASS: TestDecodeEncodings (0.00s)
+=== RUN   TestExternalRuleChange
+--- PASS: TestExternalRuleChange (0.00s)
+=== RUN   TestRulesValidation
+=== RUN   TestRulesValidation/regex
+=== RUN   TestRulesValidation/group
+=== RUN   TestRulesValidation/protocol
+=== RUN   TestRulesValidation/os_regex
+=== RUN   TestRulesValidation/version
+=== RUN   TestRulesValidation/duplicate
+=== RUN   TestRulesValidation/negative
+=== RUN   TestRulesValidation/source
+=== RUN   TestRulesValidation/empty
+=== RUN   TestRulesValidation/confidence
+--- PASS: TestRulesValidation (0.00s)
+    --- PASS: TestRulesValidation/regex (0.00s)
+    --- PASS: TestRulesValidation/group (0.00s)
+    --- PASS: TestRulesValidation/protocol (0.00s)
+    --- PASS: TestRulesValidation/os_regex (0.00s)
+    --- PASS: TestRulesValidation/version (0.00s)
+    --- PASS: TestRulesValidation/duplicate (0.00s)
+    --- PASS: TestRulesValidation/negative (0.00s)
+    --- PASS: TestRulesValidation/source (0.00s)
+    --- PASS: TestRulesValidation/empty (0.00s)
+    --- PASS: TestRulesValidation/confidence (0.00s)
+=== RUN   TestLoadRulesAndPriority
+--- PASS: TestLoadRulesAndPriority (0.00s)
+=== RUN   FuzzRecognize
+=== RUN   FuzzRecognize/seed#0
+=== RUN   FuzzRecognize/seed#1
+=== RUN   FuzzRecognize/seed#2
+=== RUN   FuzzRecognize/seed#3
+=== RUN   FuzzRecognize/seed#4
+--- PASS: FuzzRecognize (0.00s)
+    --- PASS: FuzzRecognize/seed#0 (0.00s)
+    --- PASS: FuzzRecognize/seed#1 (0.00s)
+    --- PASS: FuzzRecognize/seed#2 (0.00s)
+    --- PASS: FuzzRecognize/seed#3 (0.00s)
+    --- PASS: FuzzRecognize/seed#4 (0.00s)
+=== RUN   FuzzDecode
+=== RUN   FuzzDecode/seed#0
+=== RUN   FuzzDecode/seed#1
+=== RUN   FuzzDecode/seed#2
+--- PASS: FuzzDecode (0.00s)
+    --- PASS: FuzzDecode/seed#0 (0.00s)
+    --- PASS: FuzzDecode/seed#1 (0.00s)
+    --- PASS: FuzzDecode/seed#2 (0.00s)
+PASS
+ok  	banner-fingerprint/internal/fingerprint	0.306s
+=== RUN   TestProbe
+--- PASS: TestProbe (0.01s)
+=== RUN   TestProbeUnavailable
+--- PASS: TestProbeUnavailable (0.00s)
+PASS
+ok  	banner-fingerprint/internal/health	(cached)
+=== RUN   TestHealthReadiness
+--- PASS: TestHealthReadiness (0.00s)
+=== RUN   TestPanicRecoveryAndRequestID
+--- PASS: TestPanicRecoveryAndRequestID (0.02s)
+=== RUN   TestConcurrencyLimitHealthBypass
+--- PASS: TestConcurrencyLimitHealthBypass (0.00s)
+=== RUN   TestBodyLimit
+--- PASS: TestBodyLimit (0.00s)
+PASS
+ok  	banner-fingerprint/internal/httpapi	(cached)
+=== RUN   TestUnknownContract
+--- PASS: TestUnknownContract (0.00s)
+PASS
+ok  	banner-fingerprint/internal/model	(cached)

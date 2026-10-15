@@ -1,0 +1,9 @@
+=== RUN   TestCompose
+    compose_test.go:193: 20/20 results; service DNS; health before client; no published ports; non-root/readonly/capabilities/resources: PASS
+    compose_test.go:219: debug override: real loopback HTTP access, binds 127.0.0.1 only: PASS
+    compose_test.go:237: external rule change after restart with same image: PASS
+    compose_test.go:242: SIGTERM graceful shutdown: PASS
+    compose_test.go:262: invalid rules reject startup and prevent client execution: PASS
+--- PASS: TestCompose (27.65s)
+PASS
+ok  	banner-fingerprint/integration	28.109s
